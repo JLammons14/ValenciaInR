@@ -1,5 +1,5 @@
 # ValenciaInR
- This package adds the vaginal microbiome analysis tool Valencia to R & simplifies use of phyloseq objects with Valencia.
+ This package adds the vaginal microbiome analysis tool Valencia to R & converts phyloseq objects to the format needed for Valencia.
 
 
 ## Valcenia Publication and Github
