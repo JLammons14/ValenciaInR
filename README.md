@@ -2,7 +2,7 @@
  This package adds the vaginal microbiome analysis tool Valencia to R & converts phyloseq objects to the format needed for Valencia.
 
 ## Installing ValenciaInR
-- ValenciaInR can be installed using `devtools::github_install("JLammons14/ValenciaInR")`
+- ValenciaInR can be installed using `devtools::install_github("JLammons14/ValenciaInR")`
 - If python is not found, you can either try adding it to your path, or re-install python using `reticulate::install_python("Python_version")`
 
 
