@@ -1,0 +1,21 @@
+Package: ValenciaInR
+Title: Valencia Analysis in R
+Version: 0.0.1
+Authors@R: 
+    person("John", "Lammons", , "jlamm1@lsuhsc.edu", role = c("aut", "cre"))
+Description: ValenciaInR is used for CST classification of vaginal microbial sequencing data using the tool Valencia. This tool will 
+            The package can prepare data held in phyloseq objects for analysis with Valencia, and will run Valencia CST classification.
+License: MIT + file LICENSE
+Imports: reticulate, tidyr, dplyr, utils, phyloseq, tidyselect,
+        magrittr, tibble
+biocViews : phyloseq
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: R (>= 2.10)
+NeedsCompilation: no
+Packaged: 2023-09-14 18:02:46 UTC; jlamm1
+Author: John Lammons [aut, cre]
+Maintainer: John Lammons <jlamm1@lsuhsc.edu>
