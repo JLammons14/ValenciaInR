@@ -5,7 +5,7 @@
 - ValenciaInR can be installed using `devtools::install_github("JLammons14/ValenciaInR")`
 - If python is not found, you can either try adding it to your path, or re-install python using `reticulate::install_python("Python_version")`
 ## Functions
-Currently the package contains two function
+Currently the package contains two functions.
  1. `phy_to_val(phyloseq_objec)` which will convert a phyloseq object to data frame formatted for Valencia. This function has been designed with the SILVA database naming convention in mind. It may still work with 16s data mapped to other databases, but they have not been tested.
    There are additional options that can be used to adjust the taxanomic classification so that input data better matches the naming convention and taxonomic classification used in the Valencia reference database, as well as to circumvent the limitations of 16s sequencing and classification.  
   - The first option is `gard_adjust = T`, this will convert any OTU assigned to genus Gardnerella to be reassigned to Gardnerella vaginalis. This option has been added because Gardnerella species are rarely identified using 16s sequencing. Gardnerella species other than gardnerella vaginalis are uncommon and some argue that microbes in Gardnerella can not be speciated. 
