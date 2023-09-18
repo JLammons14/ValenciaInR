@@ -19,7 +19,4 @@ Currently the package contains two functions.
  - https://github.com/ravel-lab/VALENCIA
 
    ## Future Goals
- -  Overall we hope to add in a workflow to improve species level classification of vaginal microbiome 16s sequencing data to better fit the Valencia classifications. Two examples are listed below. 
- - In future versions we hope to improve the classification of Lactobacillus species from 16s sequencing data. An examples of this is the improper classification of Lactobacillus crispatus species to Lactobaciilus gallinarium. We commonly find that reads that are 99% homologous to Lactobacillus crispatus V4 region have been classified as Lactobacillus galliarium, a commensal primarly found in the chicken gut microbiome. This happens because the V4 region of lactobacillus gallinarium 16s gene shares a nearly identical sequence with Lactobacillus crispatus.
- - Additionally we want to improve the identification of BVAB1 with vaginal microbiome 16s sequencing data. We have found that reads with  99% homology to the V4 region of BVAB1 microbes were commonly classified as genus Shuttleworthia, a genus commonly found in the oral microbiome. Although BVAB1 is not included in many microbial sequencing databases. 
-  
+ -  Overall we hope to add in a workflow to improve species level classification of vaginal microbiome 16s sequencing data to better fit the Valencia classifications. 
