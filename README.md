@@ -6,7 +6,7 @@
 - If python is not found, you can either try adding it to your path, or re-install python using `reticulate::install_python("Python_version")`
 ## Functions
 Currently the package contains two functions.
- 1. `phy_to_val(phyloseq_object)` which will convert a phyloseq object to data frame formatted for Valencia classification. The input phyloseq object should contain read count data that isn't agglomerated. This function has been designed with the SILVA database naming convention in mind. It may still work with 16s data mapped to other databases, but they have not been tested.
+ 1. `phy_to_val(phyloseq_object)` which will convert a phyloseq object to a dataframe formatted for Valencia classification. The input phyloseq object should contain read count data that isn't agglomerated. This function has been designed with the SILVA database naming convention in mind. It may still work with 16s data mapped to other databases, but they have not been tested.
    There are additional options that can be used to adjust the taxanomic classification to match Valcencia naming convention and taxonomic classification, as well as to circumvent the limitations associated with 16s sequencing of the V4 region.  
   - The first option is `gard_adjust = T`, this will convert any OTU assigned to genus Gardnerella to be reassigned to Gardnerella vaginalis.
   - The second option is `prevotella_adjust =T`, this will convert all reads classified at the genus level as "Prevotella_7" or "Prevotella_9" to genus "Prevotella". Prevotella_7 and Prevotella_9 genus are not classifications in the Valencia reference database, are uncommon in vaginal environmets, and share significant homology with the V4 region of the 16s gene for Prevotella genus.
