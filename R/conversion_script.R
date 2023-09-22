@@ -57,5 +57,16 @@ phy_to_val <- function(ps_object, gard_adjust = F, prevotella_adjust = F) {
   valencia_df <- valencia_ps_prep_glom %>% psmelt() %>% dplyr::select(Sample, Abundance, Species) %>%
     tidyr::pivot_wider(names_from = "Species", values_from = "Abundance") %>% dplyr::left_join(total_count_df, by ="Sample") %>%
     dplyr::select(Sample, read_count, tidyselect::everything()) %>% dplyr::rename(sampleID = Sample)
+  
+  ## Checking what doesnt match
+  centriod_file_path <- system.file( "CST_centroids_012920.csv", package = "ValenciaInR")
+  centroids <- read.csv(centriod_file_path)
+
+  not_matched <- colnames(valencia_df[!colnames(valencia_df) %in% colnames(centroids)])
+  not_matched <- not_matched[-1:-2]
+
+print(paste( "Does not match Valencia taxa:", not_matched))
+
+
   return(valencia_df)
 }

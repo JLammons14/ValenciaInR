@@ -30,8 +30,8 @@ Valencia <- function (input_df ) {
   use_virtualenv("R-valencia")
 
   ## Paths for Valcencia script and reference database
-  centriod_file_path <- system.file( "CST_centroids_012920.csv", package = "ValenciaTest2")
-  valencia_file_path <- system.file( "val_code.py", package = "ValenciaTest2")
+  centriod_file_path <- system.file( "CST_centroids_012920.csv", package = "ValenciaInR")
+  valencia_file_path <- system.file( "val_code.py", package = "ValenciaInR")
 
   ## Load reference dataframe
   centroid_df <- read.csv(centriod_file_path)
