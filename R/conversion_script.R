@@ -65,7 +65,7 @@ phy_to_val <- function(ps_object, gard_adjust = F, prevotella_adjust = F) {
   not_matched <- colnames(valencia_df[!colnames(valencia_df) %in% colnames(centroids)])
   not_matched <- not_matched[-1:-2]
 
-message(paste( "Does not match Valencia taxa:", not_matched))
+message(paste( "Does not match Valencia taxa:", not_matched, "\n"))
 
 
   return(valencia_df)
