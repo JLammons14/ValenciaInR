@@ -25,12 +25,18 @@ phy_to_val <- function(ps_object, gard_adjust = F, prevotella_adjust = F) {
     ## Getting Total Sample count
   total_count_df <- sample_sums(ps_object) %>% as.data.frame() %>% tibble::rownames_to_column("Sample") %>% dplyr::rename("read_count" = ".")
 
+## Loading in Reference Data
+ centriod_file_path <- system.file( "CST_centroids_012920.csv", package = "ValenciaInR")
+  centroids <- read.csv(centriod_file_path)
+    
   ## Fixing taxonomic classification names to be compatible with Valencia
   valencia_tax_prep <- tax_table(ps_object) %>% as.matrix() %>% as.data.frame() %>%
     dplyr:: mutate(Species = paste(Genus, "_", Species, sep =""),
            Species = dplyr::case_when( grepl("_NA", Species) ~ paste("g_", Species, sep = ""), .default = Species),
            Species = dplyr::case_when(grepl("g_NA_NA", Species) ~ paste("f_", Family, sep = ""), .default = Species),
-           Species = gsub('_NA','',Species))
+            Species = dplyr::case_when(grepl("f_NA_NA", Species) ~ paste("o_", Order, sep = ""), .default = Species),
+            Species = gsub('_NA','',Species),
+            Species = dplyr::case_when(!Species %in% colnames(centroids) ~  paste("g_", Genus, sep = ""), .default = Species))
 
   if( gard_adjust == T) {
     valencia_tax_prep <- valencia_tax_prep %>%
@@ -59,12 +65,9 @@ phy_to_val <- function(ps_object, gard_adjust = F, prevotella_adjust = F) {
     dplyr::select(Sample, read_count, tidyselect::everything()) %>% dplyr::rename(sampleID = Sample)
   
   ## Checking what doesnt match
-  centriod_file_path <- system.file( "CST_centroids_012920.csv", package = "ValenciaInR")
-  centroids <- read.csv(centriod_file_path)
-
   not_matched <- colnames(valencia_df[!colnames(valencia_df) %in% colnames(centroids)])
   not_matched <- not_matched[-1:-2]
-
+    
   return(valencia_df)
 message(paste( "Does not match Valencia taxa:", not_matched, "\n"))
 }
