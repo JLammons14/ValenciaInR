@@ -7,7 +7,7 @@
 ## Functions
 Currently the package contains two functions.
  1. `phy_to_val(phyloseq_object)` which will convert a phyloseq object to a dataframe formatted for Valencia classification. The input phyloseq object should contain read count data that isn't agglomerated. This function has been designed with the SILVA database naming convention in mind. It may still work with 16s data mapped to other databases, but they have not been tested.
-- The script will agglomerated reads the the lowest level listed in the Valencia database, and all taxonomic classifications in the output dataframe that do not match classifications in the Valencia reference database will be listed in the console at the genus level. 
+- The script will agglomerated reads the the lowest level listed in the Valencia database. All taxonomic classifications in the output dataframe that do not match classifications in the Valencia reference database will be listed in the console at the genus level. 
 
    There are additional options that can be used to adjust classifications to better match Valcencia naming convention and taxonomic classification, as well as to circumvent the limitations associated with 16s sequencing of the V4 region.  
   - The first option is `gard_adjust = T`, this will convert any OTU assigned to genus Gardnerella to be reassigned to Gardnerella vaginalis.
