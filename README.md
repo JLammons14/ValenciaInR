@@ -7,9 +7,9 @@
 ## Functions
 Currently the package contains two functions.
  1. `phy_to_val(phyloseq_object)` which will convert a phyloseq object to a dataframe formatted for Valencia classification. The input phyloseq object should contain read count data that isn't agglomerated. This function has been designed with the SILVA database naming convention in mind. It may still work with 16s data mapped to other databases, but they have not been tested.
-- **I recently found a problem with this function, many taxa are only listed at the genus level in the Valencia Reference Database causing problems for some reads mapped to the species level. An example of this is reads mapped to Aerococcus_christensenii would be not be included in Valencia analysis. Before running analysis you should check your column names, I'll try and fix this issue shortly**
+- The script will agglomerated reads the the lowest level listed in the Valencia database, and all taxonomic classifications in the output dataframe that do not match classifications in the Valencia reference database will be listed in the console at the genus level. 
 
-   There are additional options that can be used to adjust the taxanomic classification to match Valcencia naming convention and taxonomic classification, as well as to circumvent the limitations associated with 16s sequencing of the V4 region.  
+   There are additional options that can be used to adjust classifications to better match Valcencia naming convention and taxonomic classification, as well as to circumvent the limitations associated with 16s sequencing of the V4 region.  
   - The first option is `gard_adjust = T`, this will convert any OTU assigned to genus Gardnerella to be reassigned to Gardnerella vaginalis.
   - The second option is `prevotella_adjust =T`, this will convert all reads classified at the genus level as "Prevotella_7" or "Prevotella_9" to genus "Prevotella". Prevotella_7 and Prevotella_9 genus are not classifications in the Valencia reference database, are uncommon in vaginal environmets, and share significant homology with the V4 region of the 16s gene for Prevotella genus.
  
