@@ -11,7 +11,7 @@ Currently the package contains two functions.
 - There are additional options that can be used to adjust classifications to better match Valcencia naming convention and taxonomic classification, as well as to circumvent the limitations associated with 16s sequencing of the V4 region.  
   - `gard_adjust = T`,  will convert any OTU assigned to genus "Gardnerella" to be reassigned to "Gardnerella_vaginalis".
   - `prevotella_adjust =T`, will convert all reads classified at the genus level as "Prevotella_7" or "Prevotella_9" to genus "Prevotella".
-  - `lact_adjust = T` will rename the classification of OTUs labeled as "Lactobacillus_acidophilus", "Lactobacillus_gallinarum", and "Lactobacillus_casei" to "Lactobacillus_crispatus". Also OTUs labeled "Lactobacillus_fornicalis" we be reclassified to "Lactobacillus_jensenii" 
+  - `lact_adjust = T` will rename the classification of OTUs labeled as "Lactobacillus_acidophilus", "Lactobacillus_gallinarum", or "Lactobacillus_casei" to "Lactobacillus_crispatus". Also OTUs labeled "Lactobacillus_fornicalis" we be reclassified to "Lactobacillus_jensenii" 
  
  2. `Valencia("valencia_formated_dataframe")` which will run Valencia, cited below, on a properly formatted dataframe. Additional details on how dataframes need to be formatted for Valencia analysis can be found on the Valencia github page.  
 
