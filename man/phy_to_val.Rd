@@ -4,7 +4,7 @@
 \alias{phy_to_val}
 \title{Convert Phyloseq Object to Valencia Compatible Dataframe}
 \usage{
-phy_to_val(ps_object, gard_adjust = F, prevotella_adjust = F)
+phy_to_val(ps_object, gard_adjust = F, prevotella_adjust = F, lact_adjust = F)
 }
 \arguments{
 \item{ps_object}{A phyloseq object containing read count data that has not been agglomerated to any taxonomic level}
@@ -13,6 +13,10 @@ phy_to_val(ps_object, gard_adjust = F, prevotella_adjust = F)
 gard_adjust = T will convert all OTUs mapped to gardnerella genus to be relabeled as Gardnerella_vaginalis}
 
 \item{prevotella_adjust}{An option to convert OTUs mapped to prevotella_7 & prevotella_9 genus to be relabeled as prevotella genus}
+
+\item{lact_adjust}{Will adjust the classification of OTUs mapped to some Lactobacillus species. Reads mapped to Lactibacillus_acidophilus,
+Lactobacillus_casei, or Lactobacillus_gallinarium will be reclassified as Lactobacillus_crispatus. Lactobacillus_fornicalis will be
+reclassified as Lactobacillus_jensenii.}
 }
 \value{
 Returns a dataframe that is formated for Valencia analysis using the Valencia function.
